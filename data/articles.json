@@ -1,0 +1,259 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "OEE Charge System",
+      "slug": "oee-charge-system",
+      "date": "January 7, 2024",
+      "author": "Jerome Edica",
+      "heroImage": "./assets/enhance2.png",
+      "keywords": ["Technology", "IoT", "ESP8266", "Microcontroller"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "The OEE Charge System is a smart power control system built around the ESP8266 microcontroller. It allows users to control electrical devices via a custom web-server interface, with manual and scheduled control options."
+        },
+        {
+          "type": "paragraph",
+          "text": "The system is equipped with 4 relay modules to manage high-voltage devices or appliances, an LCD display for system statuses and messages, scheduled countdowns, and an exhaust fan for cooling."
+        },
+        {
+          "type": "heading",
+          "text": "System Components & Build Process"
+        },
+        {
+          "type": "image",
+          "src": "./assets/oee_article_img2.png",
+          "alt": "Close-up of OEE System Interior"
+        },
+        {
+          "type": "paragraph",
+          "text": "This is the documentary of how I built OEE Charge System. It all started from scratch, Arduino & quite fun to learn and it took me 1/2 month to complete this project. The internal layout shows the careful organization of components for optimal heat dissipation and wire management."
+        },
+        {
+          "type": "image",
+          "src": "./assets/oee_article_img3.png",
+          "alt": "OEE Relay Module Configuration"
+        },
+        {
+          "type": "paragraph",
+          "text": "Building this system involved thorough testing to ensure it could handle high-voltage loads reliably. I experimented with different relay modules to ensure power delivery and various fan configurations to prevent overheating. Finding the right balance between performance and durability was key to creating a stable system."
+        },
+        {
+          "type": "paragraph",
+          "text": "This documentation serves as a helpful guide for anyone interested in building similar projects. Whether you're a beginner looking to learn the basics of microcontrollers or a seasoned DIY enthusiast, this system highlights various modules and gives opportunities to improve design thinking for high performance. Making it an ideal resource for anyone wanting to explore or test power management solutions."
+        }
+      ],
+      "downloadLink": "#"
+    },
+    {
+      "id": 2,
+      "title": "Building a Social Media Prototype from Scratch",
+      "slug": "social-media-prototype",
+      "date": "November 12, 2025",
+      "author": "Jerome Edica",
+      "heroImage": "./assets/web_dev_img.jpg",
+      "keywords": ["Development", "Web Development", "Social Media"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Building a social media platform from scratch is an ambitious project that brought together everything I've learned about web development. This prototype showcases what happens when you combine creativity with determination to create something meaningful from nothing."
+        },
+        {
+          "type": "paragraph",
+          "text": "The platform features all the essentials you'd expect from a social network: user profiles where people can express themselves, a dynamic news feed that updates in real-time, the ability to share posts and photos, and interactive features like comments and likes. Users can connect with others, follow their updates, and build their own community within the platform."
+        },
+        {
+          "type": "paragraph",
+          "text": "The biggest challenge wasn't the code itself, but designing an experience that felt intuitive and engaging. How do you organize information so it's easy to find? How do you make interactions feel instant and responsive? These questions drove countless iterations and improvements throughout the development process."
+        },
+        {
+          "type": "paragraph",
+          "text": "This project taught me that building something from scratch requires patience, problem-solving, and a willingness to learn as you go. Every feature added, every bug fixed, and every design decision made contributed to my growth as a developer. It's proof that with enough passion and persistence, you can create something impressive on your own."
+        }
+      ],
+      "downloadLink": "#"
+    },
+    {
+      "id": 3,
+      "title": "My First Model of Drone",
+      "slug": "EPD-Penta-Copter-Drone",
+      "date": "February 20, 2024",
+      "author": "Jerome Edica",
+      "heroImage": "./assets/3d_modeling_img.jpg",
+      "keywords": ["Design", "3D Modeling", "Blender", "Drone Design"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "The Edica Project Drone (EPD) Penta Copter represents my first venture into drone design and 3D modeling. Created in early 2024, this realistic 3D model showcases a five-rotor aerial vehicle designed with attention to aerodynamics and visual appeal."
+        },
+        {
+          "type": "paragraph",
+          "text": "Unlike traditional quadcopters, the penta copter configuration offers enhanced stability and redundancy. With five rotors instead of four, the drone can maintain flight even if one motor fails, making it a safer and more reliable design for aerial applications."
+        },
+        {
+          "type": "paragraph",
+          "text": "The entire model was crafted in Blender, focusing on realistic proportions, materials, and details. From the carbon fiber frame texture to the precise placement of electronic components, every element was carefully considered to create a believable and functional-looking design."
+        },
+        {
+          "type": "paragraph",
+          "text": "This project taught me valuable lessons about 3D modeling workflows, lighting techniques for rendering, and the fundamentals of drone architecture. It's the foundation for future projects involving actual drone construction and flight controller programming."
+        }
+      ],
+      "downloadLink": "#"
+    },
+    {
+      "id": 4,
+      "title": "Explore my Hobbies in Life",
+      "slug": "explore-my-hobbies",
+      "date": "November 12, 2025",
+      "author": "Jerome Edica",
+      "heroImage": "./assets/hobbies_img.jpg",
+      "keywords": ["Personal", "Lifestyle", "Hobbies", "Personal Growth"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Life is short, let's learn to live the fullest, and always keep expanding our knowledge."
+        },
+        {
+          "type": "heading",
+          "text": "Programming"
+        },
+        {
+          "type": "paragraph",
+          "text": "I love to code, because I can do weird things that I like to do with programming languages. It's not just about solving problems, it's about bringing ideas to life and creating tools that make a difference."
+        },
+        {
+          "type": "heading",
+          "text": "Sports"
+        },
+        {
+          "type": "paragraph",
+          "text": "I love playing every kind of sports like football, volleyball, badminton, and I want also to try tennis, and to learn how to swim. Also my main sport is basketball, I'm not saying I'm a professional player but if you want to challenge me it's fine."
+        },
+        {
+          "type": "heading",
+          "text": "Studying"
+        },
+        {
+          "type": "paragraph",
+          "text": "I love studying in my own way because I want to expand my knowledge. Reading and watching videos is my source of learning and after that I apply it by myself and creating solutions and making my own experiments for me to be able to understand everything."
+        },
+        {
+          "type": "heading",
+          "text": "Writing"
+        },
+        {
+          "type": "paragraph",
+          "text": "I'm not a writer but I love to write in essay form. English or Tagalog is my language when I'm writing essays. I also write any kind of story about life or motivational and inspirational quotes. I learned the English language when I started to write essays in a form of English."
+        },
+        {
+          "type": "heading",
+          "text": "Music"
+        },
+        {
+          "type": "paragraph",
+          "text": "I love music because it makes me calm and more active in working or doing a project like a website. I also love dancing and singing but I'm shy doing it in public, but when it comes to presentation in school or a trip, of course I'm doing it for grades and for fun."
+        },
+        {
+          "type": "heading",
+          "text": "Life Goals"
+        },
+        {
+          "type": "paragraph",
+          "text": "In life my goal is to become successful in everything I put in efforts. I love teaching other people and my friends. I also give them an inspirational story and motivation for them to achieve what they really want to achieve in life. I want to take advance in everything and care about the future at an early age."
+        },
+        {
+          "type": "heading",
+          "text": "Cooking"
+        },
+        {
+          "type": "paragraph",
+          "text": "I was in grade 2 level when I started to cook, only fried dishes. When I got bigger and bigger I started to learn how to set ingredients. I learned it by watching some chefs on YouTube like Chinese, Korean, Japanese and so much more. I also like turning Filipino dishes into an extraordinary dish by adjusting the taste and enhancing the flavor of it. I'm not a chef but I love to experiment with food and to learn how to cook perfectly."
+        },
+        {
+          "type": "heading",
+          "text": "Workout"
+        },
+        {
+          "type": "paragraph",
+          "text": "Staying fit and healthy is important to me. Working out helps me maintain energy and focus, whether I'm coding, playing sports, or tackling daily challenges. It's about building strength both physically and mentally."
+        },
+        {
+          "type": "heading",
+          "text": "Watching Videos"
+        },
+        {
+          "type": "paragraph",
+          "text": "I love watching movies on Netflix like sci-fi, horror, thriller, love story, comedy, those are my favorite genres to watch. I also like watching anime sometimes and after 3 episodes I feel sleepy. Documentary, history and learning videos are also my favorites to watch. Just like I said, 'I keep expanding my knowledge.'"
+        },
+        {
+          "type": "heading",
+          "text": "Organization"
+        },
+        {
+          "type": "paragraph",
+          "text": "I want everything to be organized and keep my files protected. Just like in the house, I want to see it clean and organized. I'm helping with doing house chores and I make sure that all things that I handle are properly cleaned and organized."
+        },
+        {
+          "type": "heading",
+          "text": "Gaming"
+        },
+        {
+          "type": "paragraph",
+          "text": "Playing is fun and it removes your stress, but when you lose, it adds more stress. It depends on you how you enjoy the game. I was in kindergarten when I started to play First Person Shooter or 'FPS' games. I discovered that I have skill in any form of game I like, but FPS game is my main game. I want to become a streamer or a pro player soon with my fellow clan."
+        },
+        {
+          "type": "heading",
+          "text": "Arts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Art also is my passion. I love doing creative artwork like painting, spray-paint-art, and also I love to draw like realistic and other stuff, but I need to learn more about proper shading for me to create a good portrait. I'm using my imagination to be able to create artwork and thinking for the right position, color and layout or shape of the art I want to create."
+        },
+        {
+          "type": "heading",
+          "text": "Photography"
+        },
+        {
+          "type": "paragraph",
+          "text": "Capturing moments through the lens is another passion of mine. Photography allows me to see the world from different perspectives and preserve memories in creative ways. Every shot tells a story."
+        },
+        {
+          "type": "heading",
+          "text": "Editing"
+        },
+        {
+          "type": "paragraph",
+          "text": "When I have nothing to do I usually go for editing. I love editing both pictures and videos like turning low quality to high quality and making the subject more attractive. I also love creating logos and other stuff like logos for gaming and also for video editing when it comes to gaming or events. I'm interested in making montage videos of it."
+        }
+      ],
+      "downloadLink": "#"
+    },
+    {
+      "id": 5,
+      "title": "Dreaming to Become a Computer Scientist",
+      "slug": "dreaming-computer-scientist",
+      "date": "April 6, 2024",
+      "author": "Jerome Edica",
+      "heroImage": "./assets/article_5_main_img.jpg",
+      "keywords": ["Lifestyle", "Inspiration", "Personal Growth", "Innovation"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Why do I want to be a Scientist or Computer Scientist? When I was a kid, I was so creative that sometimes I could say 'Albert Einstein' is one of the things I admire because of his extraordinary talent. It inspires his sayings and how he thinks. I also want to do something that will help us improve our country, like questions I can't answer."
+        },
+        {
+          "type": "image",
+          "src": "./assets/article_5_img.jpg",
+          "alt": "Automatic Disinfectant Spray Project"
+        },
+        {
+          "type": "paragraph",
+          "text": "The picture is my project, I called it 'Automatic Disinfectant Spray'. Many have done it, but why did I do it? It helps me to learn when I have experience in how to do it. I made mistakes several times until I made it. My advice to beginners is not to be afraid to make mistakes."
+        }
+      ],
+      "downloadLink": "#"
+    }
+  ]
+}

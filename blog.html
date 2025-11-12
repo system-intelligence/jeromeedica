@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Jerome Edica</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <span class="brand-icon">🧠</span>
+      <span class="brand-text">Edica J.</span>
+    </div>  
+    <div class="nav-links">
+      <a href="./index.html">Projects</a>
+      <a href="./blog.html">Blog</a>
+      <a href="#" class="disabled">Products</a>
+      <a href="#" class="disabled">Docs</a>
+    </div>
+    <button class="hire-btn">
+      Hire Me <span class="arrow">→</span>
+    </button>
+  </nav>
+
+  <!-- Blog Hero Section -->
+  <section class="blog-hero">
+    <h1>Your Passion Will Lead You to New Discoveries</h1>
+    <p>— Jerome Edica</p>
+    <p>Explore my latest articles, insights, and stories</p>
+    <div class="search-bar">
+      <i class="fas fa-search"></i>
+      <input type="text" id="search-input" placeholder="Search articles...">
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <section class="blog-filters">
+    <button class="filter-btn active" data-category="all">
+      All Posts <span class="count" id="count-all">0</span>
+    </button>
+    <button class="filter-btn" data-category="Technology">
+      Technology <span class="count" id="count-tech">0</span>
+    </button>
+    <button class="filter-btn" data-category="Design">
+      Design <span class="count" id="count-design">0</span>
+    </button>
+    <button class="filter-btn" data-category="Development">
+      Development <span class="count" id="count-dev">0</span>
+    </button>
+    <button class="filter-btn" data-category="Lifestyle">
+      Lifestyle <span class="count" id="count-lifestyle">0</span>
+    </button>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="blog-grid" id="blog-grid">
+    <!-- Cards will be dynamically loaded here -->
+  </section>
+
+  <!-- Article Modal -->
+  <div class="article-modal" id="article-modal">
+    <div class="article-modal-overlay" onclick="closeArticleModal()"></div>
+    <div class="article-modal-content">
+      <button class="modal-close" onclick="closeArticleModal()">
+        <i class="fas fa-times"></i>
+      </button>
+      <div id="article-detail">
+        <!-- Article content will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="brand-icon">🧠</span>
+        <span class="brand-text">EDICA J.</span>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-column donate-column">
+          <p class="donate-text">
+            Support this student's journey, every contribution helps empower learning and development.
+          </p>
+          <button class="donate-button">Donate Now</button>
+        </div>
+
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h4>Socials</h4>
+            <a href="#">Facebook</a>
+            <a href="#">GitHub</a>
+          </div>
+          <div class="footer-column">
+            <h4>Dev Story</h4>
+            <a href="#">OEE Charge System</a>
+            <a href="#">Freelance Journey</a>
+          </div>
+          <div class="footer-column">
+            <h4>PDF Files</h4>
+            <a href="#">Python Essentials</a>
+            <a href="#">Data Analytics</a>
+          </div>
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <p>edica.discovery@gmail.com</p>
+            <p>Manila, Philippines</p>
+            <a id="send_message_footer" href="#">
+              <i class="fas fa-paper-plane"></i> Send a message
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <div class="footer-bottom">
+      © 2025 Jerome Edica. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    let allArticles = [];
+    let filteredArticles = [];
+
+    // Fetch articles
+    fetch('./data/articles.json?v=' + Date.now())
+      .then(response => response.json())
+      .then(data => {
+        allArticles = data.articles;
+        filteredArticles = allArticles;
+        updateCounts();
+        renderBlogCards(filteredArticles);
+      })
+      .catch(error => {
+        console.error('Error loading articles:', error);
+        document.getElementById('blog-grid').innerHTML = '<p style="text-align: center; padding: 2rem; color: #888;">Error loading blog posts.</p>';
+      });
+
+    // Render blog cards
+    function renderBlogCards(articles) {
+      const grid = document.getElementById('blog-grid');
+      
+      if (articles.length === 0) {
+        grid.innerHTML = '<p style="text-align: center; padding: 2rem; color: #888; grid-column: 1/-1;">No articles found.</p>';
+        return;
+      }
+
+      grid.innerHTML = articles.map(article => {
+        const readTime = Math.floor(Math.random() * 5) + 3; // Random 3-8 min
+        
+        return `
+          <article class="blog-card" onclick="openArticleModal(${article.id})">
+            <div class="blog-card-image">
+              <img src="${article.heroImage}" alt="${article.title}">
+            </div>
+            <div class="blog-card-content">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar"></i> ${article.date}</span>
+                <span><i class="far fa-clock"></i> ${readTime} min read</span>
+              </div>
+              <h3>${article.title}</h3>
+              <p>${article.content[0]?.text.substring(0, 120)}...</p>
+              <div class="blog-footer">
+                <div class="author">
+                  <img src="./assets/profile_img.jpg" alt="${article.author}">
+                  <span>${article.author}</span>
+                </div>
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // Update counts
+    function updateCounts() {
+      document.getElementById('count-all').textContent = allArticles.length;
+      document.getElementById('count-tech').textContent = allArticles.filter(a => a.keywords.includes('Technology') || a.keywords.includes('IoT') || a.keywords.includes('ESP8266')).length;
+      document.getElementById('count-design').textContent = allArticles.filter(a => a.keywords.includes('Design') || a.keywords.includes('3D Printing')).length;
+      document.getElementById('count-dev').textContent = allArticles.filter(a => a.keywords.includes('Development') || a.keywords.includes('Web Development') || a.keywords.includes('Arduino')).length;
+      document.getElementById('count-lifestyle').textContent = allArticles.filter(a => a.keywords.includes('Lifestyle') || a.keywords.includes('Personal') || a.keywords.includes('Hobbies')).length;
+    }
+
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        const category = this.dataset.category;
+        
+        if (category === 'all') {
+          filteredArticles = allArticles;
+        } else {
+          filteredArticles = allArticles.filter(article => {
+            if (category === 'Technology') {
+              return article.keywords.some(kw => ['Technology', 'IoT', 'ESP8266', 'Firebase', 'Microcontroller'].includes(kw));
+            } else if (category === 'Design') {
+              return article.keywords.some(kw => ['Design', '3D Printing', 'Blender'].includes(kw));
+            } else if (category === 'Development') {
+              return article.keywords.some(kw => ['Development', 'Web Development', 'Arduino', 'Robotics'].includes(kw));
+            } else if (category === 'Lifestyle') {
+              return article.keywords.some(kw => ['Lifestyle', 'Personal', 'Hobbies', 'Personal Growth', 'Inspiration'].includes(kw));
+            }
+            return false;
+          });
+        }
+        
+        renderBlogCards(filteredArticles);
+      });
+    });
+
+    // Search functionality
+    document.getElementById('search-input').addEventListener('input', function(e) {
+      const query = e.target.value.toLowerCase();
+      
+      if (query === '') {
+        renderBlogCards(filteredArticles);
+        return;
+      }
+      
+      const searchResults = filteredArticles.filter(article => 
+        article.title.toLowerCase().includes(query) ||
+        article.keywords.some(kw => kw.toLowerCase().includes(query)) ||
+        article.content.some(c => c.text && c.text.toLowerCase().includes(query))
+      );
+      
+      renderBlogCards(searchResults);
+    });
+
+    // Modal functions
+    function openArticleModal(articleId) {
+      const article = allArticles.find(a => a.id === articleId);
+      if (!article) return;
+
+      const modal = document.getElementById('article-modal');
+      const detail = document.getElementById('article-detail');
+      
+      // Render article content
+      let contentHTML = `
+        <div class="article-hero">
+          <img src="${article.heroImage}" alt="${article.title}">
+        </div>
+        <div class="article-header">
+          <div class="article-meta">
+            <span><i class="far fa-calendar"></i> ${article.date}</span>
+            <span><i class="far fa-user"></i> ${article.author}</span>
+          </div>
+          <h1>${article.title}</h1>
+          <div class="article-keywords">
+            ${article.keywords.map(kw => `<span class="keyword-tag">${kw}</span>`).join('')}
+          </div>
+        </div>
+        <div class="article-body">
+      `;
+
+      article.content.forEach(block => {
+        if (block.type === 'paragraph') {
+          contentHTML += `<p>${block.text}</p>`;
+        } else if (block.type === 'heading') {
+          contentHTML += `<h2>${block.text}</h2>`;
+        } else if (block.type === 'image') {
+          contentHTML += `<img src="${block.src}" alt="${block.alt || 'Article image'}" class="article-image">`;
+        } else if (block.type === 'list') {
+          contentHTML += `<ul>${block.items.map(item => `<li>${item}</li>`).join('')}</ul>`;
+        }
+      });
+
+      contentHTML += '</div>';
+      detail.innerHTML = contentHTML;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeArticleModal() {
+      const modal = document.getElementById('article-modal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeArticleModal();
+      }
+    });
+  </script>
+
+</body>
+</html>

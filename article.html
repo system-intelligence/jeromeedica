@@ -5,17 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Article</title>
-  <link rel="stylesheet" href="./css/style.css"">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Navbar --> 
   <nav class="navbar">
     <div class="logo">
-      <span class="logo-icon">🧠</span> Edica J.
+      <span class="brand-icon">🧠</span>
+      <span class="brand-text">Edica J.</span>
     </div>  
     <div class="nav-links">
-      <a href="./index.html" class="disabled">Projects</a>
-      <a href="#" class="">Articles</a>
+      <a href="./index.html">Projects</a>
+      <a href="./blog.html">Blog</a>
       <a href="#" class="disabled">Products</a>
       <a href="#" class="disabled">Docs</a>
     </div>
@@ -24,60 +25,110 @@
     </button>
   </nav>
 
-  <section class="article-page">
-    <div class="hero-image">
-      <img src="./assets/enhance2.png" alt="OEE Charge System Cover">
-    </div>
+  <section id="article-container" class="article-page">
+    <!-- Article content will be dynamically loaded here -->
+  </section>
 
-    <div class="article-content">
-      <div class="meta">
-        <div class="info">
-          <h1>OEE Charge System</h1>
-          <p class="date">Posted on: January 7, 2024</p>
-          <p class="tags">Keywords: <span>ESP8266</span> <span>Relay</span> <span>Microcontroller</span></p>
+  <script>
+    // Get article ID from URL parameter, default to 1
+    const urlParams = new URLSearchParams(window.location.search);
+    const articleId = parseInt(urlParams.get('id')) || 1;
+
+    console.log('Loading article ID:', articleId);
+
+    // Fetch and render article with cache busting
+    fetch('./data/articles.json?v=' + Date.now())
+      .then(response => {
+        console.log('Fetch response:', response.status);
+        return response.json();
+      })
+      .then(data => {
+        console.log('Articles loaded:', data.articles.length);
+        console.log('All article IDs:', data.articles.map(a => a.id));
+        
+        const article = data.articles.find(a => a.id === articleId);
+        if (article) {
+          console.log('Found article:', article.title);
+          renderArticle(article);
+        } else {
+          console.error('Article not found for ID:', articleId);
+          document.getElementById('article-container').innerHTML = `<div style="padding: 2rem; text-align: center;"><h2>Article not found</h2><p>Article ID ${articleId} does not exist.</p></div>`;
+        }
+      })
+      .catch(error => {
+        console.error('Error loading article:', error);
+        document.getElementById('article-container').innerHTML = `<div style="padding: 2rem; text-align: center;"><h2>Error loading article</h2><p>${error.message}</p></div>`;
+      });
+
+    function renderArticle(article) {
+      // Update page title
+      document.title = article.title + ' - Jerome Edica';
+      
+      const container = document.getElementById('article-container');
+      
+      // Build hero image
+      let html = `
+        <div class="hero-image">
+          <img src="${article.heroImage}" alt="${article.title} Cover">
         </div>
-        <div class="meta-side">
-          <p>Develop: <strong></strong></p>
-          <p>Design: <strong></strong></p>
-          <p>System: Architecture: <strong></strong></p>
-          <p>By: <strong>Jerome Edica</strong></p>
-        </div>
-      </div>
 
-      <div class="article-body">
-        <p>
-          The OEE Charge System is a smart power control system built around the ESP8266 microcontroller. It allows users to control electrical devices via a custom web-server interface, with manual and scheduled control options.
-        </p>
+        <div class="article-content">
+          <div class="meta">
+            <div class="info">
+              <h1>${article.title}</h1>
+              <p class="date">Posted on: ${article.date}</p>
+              <p class="tags">Keywords: ${article.keywords.map(kw => `<span>${kw}</span>`).join(' ')}</p>
+            </div>
+            <div class="meta-side">
+              <p>Develop: <strong>${article.meta.develop}</strong></p>
+              <p>Design: <strong>${article.meta.design}</strong></p>
+              <p>System Architecture: <strong>${article.meta.systemArchitecture}</strong></p>
+              <p>By: <strong>${article.author}</strong></p>
+            </div>
+          </div>
 
-        <p>
-          The system is equipped with 4 relay modules to manage high-voltage devices or appliances, an LCD display for system statuses and messages, scheduled countdowns, and an exhaust fan for cooling.
-        </p>
+          <div class="article-body">
+      `;
 
-        <div class="image-grid">
-          <figure>
-            <img src="./assets/oee_article_img2.png" alt="Close-up of OEE System">
-            <figcaption><strong>This is the documentary of how I built OEE Charge System.</strong> It all started from scratch, Arduino & quite fun to learn and it took me 1/2 month to complete this project.</figcaption>
-          </figure>
-          <div class="image-pair">
-            <img src="./assets/oee_article_img3.png" alt="Relay Module">
+      // Render content blocks
+      article.content.forEach(block => {
+        if (block.type === 'paragraph') {
+          html += `<p>${block.text}</p>`;
+        } else if (block.type === 'image-grid') {
+          html += '<div class="image-grid">';
+          block.images.forEach((img, index) => {
+            if (index === 0 && img.caption) {
+              html += `
+                <figure>
+                  <img src="${img.src}" alt="${img.alt}">
+                  <figcaption><strong>${img.caption}</strong></figcaption>
+                </figure>
+              `;
+            } else {
+              html += `
+                <div class="image-pair">
+                  <img src="${img.src}" alt="${img.alt}">
+                </div>
+              `;
+            }
+          });
+          html += '</div>';
+        }
+      });
+
+      html += `
+          </div>
+
+          <div class="download-bar">
+            <span>${article.title}</span>
+            <button onclick="window.location.href='${article.downloadLink}'">Download Article ⬇</button>
           </div>
         </div>
+      `;
 
-        <p>
-          Building this system involved thorough testing to ensure it could handle high-voltage loads reliably. I experimented with different relay modules to ensure power delivery and various fan configurations to prevent overheating. Finding the right balance between performance and durability was key to creating a stable system.
-        </p>
-
-        <p>
-          This documentation serves as a helpful guide for anyone interested in building similar projects. Whether you’re a beginner looking to learn the basics of microcontrollers or a seasoned DIY enthusiast, this system highlights various modules and gives opportunities to improve design thinking for high performance. Making it an ideal resource for anyone wanting to explore or test power management solutions.
-        </p>
-      </div>
-
-      <div class="download-bar">
-        <span>OEE Charge System</span>
-        <button>Download Article ⬇</button>
-      </div>
-    </div>
-  </section>
+      container.innerHTML = html;
+    }
+  </script>
 
 </body>
 </html>

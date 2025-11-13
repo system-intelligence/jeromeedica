@@ -254,6 +254,182 @@
         }
       ],
       "downloadLink": "#"
+    },
+    {
+      "id": 6,
+      "title": "Leading the National Science Expo Team",
+      "slug": "national-science-expo-team",
+      "date": "November 13, 2025",
+      "author": "Jerome Edica",
+      "heroImage": "./assets/article_6.jpg",
+      "keywords": ["Innovation", "Research", "AI", "Education", "Technology"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "I still remember the nerves I felt during my very first Research Congress. Standing there, unsure of what the outcome would be, I told myself: 'Win or lose, this experience is good, and I've learned so much.' That mindset carried me through, and it became the foundation of everything that followed."
+        },
+        {
+          "type": "paragraph",
+          "text": "I owe deep gratitude to my teachers, coaches, group members, and the National Expo Team. Their guidance and support made it possible for us to compete in Lucena, Quezon. And to those who believed in us, especially Tagkawayan National High School, this fight was for you."
+        },
+        {
+          "type": "heading",
+          "text": "Leading the National Science Expo Team"
+        },
+        {
+          "type": "paragraph",
+          "text": "I was chosen to lead our school's National Science Expo team, representing Tagkawayan National High School. That journey became one of the proudest moments of my life. Our research caught attention, set a benchmark at school, and opened doors to interviews and opportunities including recognition from De La Salle University."
+        },
+        {
+          "type": "paragraph",
+          "text": "But I made a choice: to protect what I had built. Instead of chasing external offers, I focused on strengthening my own project, an innovation that was ahead of its time."
+        },
+        {
+          "type": "heading",
+          "text": "Building an Offline AI Chatbot for Students"
+        },
+        {
+          "type": "paragraph",
+          "text": "Back then, Meta AI was not yet popular or integrated into Messenger. So I turned to open-source tools and built something unique: a custom offline chatbot powered by AI."
+        },
+        {
+          "type": "list",
+          "items": [
+            "📚 No internet required – Students could learn without worrying about data costs.",
+            "🔄 Free data usage only – The system was designed to load and update using free data access.",
+            "📑 PDF support offline – I upgraded it into an educational kit that allowed users to open and interact with PDF content offline, pulling resources from Google sources."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "In short, I wanted to break the limits of internet dependency so students could learn anytime, anywhere. At some point, I felt like I was bending the rules of the internet itself, but the mission was clear: to make learning accessible for everyone."
+        },
+        {
+          "type": "heading",
+          "text": "Science and Technology: A Pathway to Change"
+        },
+        {
+          "type": "paragraph",
+          "text": "Science and technology are truly amazing. They do not just give us tools, they give us opportunities to transform lives. My journey, from nervous beginnings at the Research Congress to building an offline AI educational kit, proves that innovation can start anywhere, even in a small school in Quezon."
+        },
+        {
+          "type": "paragraph",
+          "text": "And this is only the beginning."
+        }
+      ],
+      "downloadLink": "#"
+    },
+    {
+      "id": 7,
+      "title": "Compete in Solo Research (3 Hours)",
+      "slug": "compete-in-solo-research-3-hours",
+      "date": "December 15, 2024",
+      "author": "Jerome Edica",
+      "heroImage": "./assets/article_7.jpg",
+      "keywords": ["Research", "Innovation", "Competition", "Academic"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "After the event in the National Science Technology Fair, I was chosen again to join the solo research event in school. That time I felt both excited and nervous, because for me I am not good at writing papers. But for them, they believed I could be more. They saw my strength, that I can compose bright ideas to solve real-world problems."
+        },
+        {
+          "type": "heading",
+          "text": "The Three-Hour Challenge"
+        },
+        {
+          "type": "paragraph",
+          "text": "The challenge was tough. They gave us a problem about flood solutions in Quezon Province, and all participants had to create a complete research paper from Chapter 1 to Chapter 5 in just three hours, right on our seats."
+        },
+        {
+          "type": "paragraph",
+          "text": "Most of us did not finish it, and afterward everyone was called one by one to defend their research. I felt great because someone from Class A applauded me and said, \"Ang galing mo kanina.\" That moment was probably the best part of the experience."
+        },
+        {
+          "type": "heading",
+          "text": "Coming Soon: My Flood Control Research"
+        },
+        {
+          "type": "paragraph",
+          "text": "As for my flood control research, I will share more details in my next blog."
+        }
+      ],
+      "downloadLink": "#"
+    },
+    {
+      "id": 8,
+      "title": "Rank 9 WT Philippines",
+      "slug": "rank-9-wt-philippines",
+      "date": "January 20, 2025",
+      "author": "Jerome Edica",
+      "heroImage": "./assets/article_8.jpg",
+      "keywords": ["Development", "Coding", "Achievement", "Lifestyle"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Hmm, it's been a month, na miss ko mag code."
+        },
+        {
+          "type": "heading",
+          "text": "Record: Rank 9 WT Philippines"
+        },
+        {
+          "type": "paragraph",
+          "text": "For being one of the most active developers back then, I used to code without much sleep. The dedication and countless hours spent building and creating pushed me to achieve something I'm proud of—reaching Rank 9 in WT Philippines."
+        },
+        {
+          "type": "paragraph",
+          "text": "Those days were intense. Every line of code felt like progress, every project was a step forward. The community, the challenges, the late-night debugging sessions—they all became part of who I am as a developer."
+        },
+        {
+          "type": "heading",
+          "text": "The Goal Ahead"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hmm, I'm thinking of reaching rank 1 soon."
+        },
+        {
+          "type": "paragraph",
+          "text": "The journey continues. After a month away from coding, the passion is still there, maybe even stronger. Time to get back to what I love and aim for the top."
+        }
+      ],
+      "downloadLink": "#"
+    },
+    {
+      "id": 9,
+      "title": "Graduated with High Honors under STEM",
+      "slug": "graduated-with-high-honors-under-stem",
+      "date": "March 28, 2024",
+      "author": "Jerome Edica",
+      "heroImage": "./assets/article_9.jpg",
+      "keywords": ["Achievement", "Academic", "Lifestyle"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Small wins haha lol."
+        },
+        {
+          "type": "heading",
+          "text": "With High Honors under STEM"
+        },
+        {
+          "type": "paragraph",
+          "text": "Graduated with High Honors under the STEM strand."
+        },
+        {
+          "type": "heading",
+          "text": "Best Speaker Award"
+        },
+        {
+          "type": "paragraph",
+          "text": "Also received the Best Speaker award during graduation."
+        },
+        {
+          "type": "paragraph",
+          "text": "And some awards are thrown already."
+        }
+      ],
+      "downloadLink": "#"
     }
   ]
 }

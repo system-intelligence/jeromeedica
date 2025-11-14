@@ -417,6 +417,11 @@
           "text": "Graduated with High Honors under the STEM strand."
         },
         {
+          "type": "image",
+          "src": "./assets/article_9.jpg",
+          "alt": "Graduation with High Honors"
+        },
+        {
           "type": "heading",
           "text": "Best Speaker Award"
         },
@@ -427,6 +432,19 @@
         {
           "type": "paragraph",
           "text": "And some awards are thrown already."
+        },
+        {
+          "type": "heading",
+          "text": "Featured in School Newspaper"
+        },
+        {
+          "type": "paragraph",
+          "text": "The school decided to put me in the newspaper and got a lot of interviews during my senior high days."
+        },
+        {
+          "type": "image",
+          "src": "./assets/article_9_newspaper.jpg",
+          "alt": "Featured in school newspaper"
         }
       ],
       "downloadLink": "#"
